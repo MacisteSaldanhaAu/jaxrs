@@ -160,17 +160,14 @@
                     </p>
                 </div>
                 <div class="col-lg-8 col-lg-offset-2">
-                    <p>Para permitir el soporte de JAX-RS en la aplicación para con el servidor jboss modificar el archivo pom.xml agregando la siguiente dependencia.</p>                    
-                    <pre>
-                        <code class="language-xml">
-<dependency>
+                    <p>Para permitir el soporte de JAX-RS en la aplicación para con el servidor jboss modificar el archivo pom.xml agregando la siguiente dependencia.</p>
+<pre><code class="language-markup"><script type="prism-html-markup"><dependency>
     <groupId>org.jboss.resteasy</groupId>
     <artifactId>resteasy-jaxrs</artifactId>
     <version>3.0.16.Final</version>
     <scope>provided</scope>
-</dependency>
-                        </code>
-                    </pre>
+</dependency></script></code></pre>
+
                 </div>
                 <div class="col-lg-8 col-lg-offset-2">
                     <p>Se requiere agregar una clase que extienda de javax.ws.rs.core.Application para de esta forma indicar al servidor de aplicaciones que se requiere el despliegue de Web Services REST.</p>                    
