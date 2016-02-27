@@ -2,7 +2,7 @@
 	<window apply="org.zkoss.bind.BindComposer"
 		viewModel="@id('vm')@init('com.hercarr.jaxrs.sample.MyViewModel')" validationMessages="@id('vmsgs')">
 		<div align="center">
-			<listbox model="@load(vm.users)" width="50%">
+			<listbox model="@load(vm.users)" width="50%" emptyMessage="no existen usuarios">
 			    <listhead>
 			        <listheader label="username" />
 			        <listheader label="email" />
