@@ -1,8 +1,19 @@
 <zk>
 	<window apply="org.zkoss.bind.BindComposer"
-		viewModel="@id('vm')@init('com.hercarr.jaxrs.sample.MyViewModel')"
-		validationMessages="@id('vmsgs')">
-		<hlayout>count: <label value="@load(vm.count)" /></hlayout>
-		<button label="add" onClick="@command('cmd')"/>
+		viewModel="@id('vm')@init('com.hercarr.jaxrs.sample.MyViewModel')" validationMessages="@id('vmsgs')">
+		<div align="center">
+			<listbox model="@load(vm.users)" width="50%">
+			    <listhead>
+			        <listheader label="username" />
+			        <listheader label="email" />
+			    </listhead>
+			    <template name="model" var="user">
+			        <listitem>
+			            <listcell label="@load(user.username)" />
+			            <listcell label="@load(user.email)" />
+			        </listitem>
+			    </template>
+			</listbox>
+		</div>		
 	</window>
 </zk>
