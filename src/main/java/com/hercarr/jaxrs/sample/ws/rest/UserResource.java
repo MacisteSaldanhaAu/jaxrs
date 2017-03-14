@@ -71,5 +71,17 @@ public class UserResource {
 		User user = userService.findUserById(id);
 		return gson.toJson(user);
 	}
+	
+	@GET
+	@Path("/{id}/download")
+	public void downloadUserPic(){
+		
+	}
+	
+	@GET
+	@Path("/{id}/delete")
+	public String delete(@PathParam("id") Integer id){
+		return gson.toJson(userService.deleteUser(id));	
+	}
 
 }
