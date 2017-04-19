@@ -48,11 +48,35 @@ public class UserResource {
 		User user = gson.fromJson(json, User.class);
 		return gson.toJson(userService.addUser(user));
 	}
+
+	@POST
+	@Path("/{id}")
+	@Produces("application/json")
+	public String addUser2(String json) {
+		User user = gson.fromJson(json, User.class);
+		return gson.toJson(userService.addUser(user));
+	}
+
+	@POST
+	@Path("")
+	@Produces("application/json")
+	public String addUser3(String json) {
+		User user = gson.fromJson(json, User.class);
+		return gson.toJson(userService.updateOrCreateUser(user));
+	}
 	
 	@PUT
 	@Path("")
 	@Produces("application/json")
 	public String updateUser(String json) {
+		User user = gson.fromJson(json, User.class);
+		return gson.toJson(userService.updateUser(user));
+	}
+
+	@PUT
+	@Path("/{id}")
+	@Produces("application/json")
+	public String updateUser2(@PathParam("id") Integer id, String json) {
 		User user = gson.fromJson(json, User.class);
 		return gson.toJson(userService.updateUser(user));
 	}

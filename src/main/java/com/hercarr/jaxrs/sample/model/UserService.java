@@ -32,6 +32,15 @@ public class UserService {
 		UserService.users.add(user);
 		return true;
 	}
+
+	public boolean updateOrCreateUser(User user) {
+		User u = findUserById(user.getId());
+		if (u == null) {
+			return UserService.users.add(user);
+		} else {
+			return updateUser(user);
+		}
+	}
 	
 	public User findUserById(Integer id) {
 		if (validateID(id)) {
