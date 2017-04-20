@@ -33,10 +33,15 @@ public class UserService {
 		return true;
 	}
 
+	public boolean add(User user) {
+		UserService.users.add(user);
+		return true;
+	}
+
 	public boolean updateOrCreateUser(User user) {
 		User u = findUserById(user.getId());
 		if (u == null) {
-			return UserService.users.add(user);
+			return add(user);
 		} else {
 			return updateUser(user);
 		}
