@@ -87,6 +87,30 @@ public class UserResource {
 	public String deleteUser(@PathParam("id") Integer id) {
 		return gson.toJson(userService.deleteUser(id));
 	}
+
+	@DELETE
+	@Path("/{id}")
+	@Produces("application/json")
+	public String deleteUser2(@PathParam("id") Integer id) {
+		User user = userService.findUserById(id);
+		return gson.toJson(userService.updateUser(user));
+	}
+
+	@PATCH
+	@Path("/{id}")
+	@Produces("application/json")
+	public String patchUser(@PathParam("id") Integer id, String json) {
+		User user = gson.fromJson(json, User.class);
+		return gson.toJson(userService.updateUser(user));
+	}
+
+	@PATCH
+	@Path("/{id}")
+	@Produces("application/json")
+	public String patchUser2(@PathParam("id") Integer id) {
+		User user = userService.findUserById(id);
+		return gson.toJson(user);
+	}
 	
 	@GET
 	@Path("/{id}")
